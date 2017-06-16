@@ -5,13 +5,73 @@
         margin-top: 60px;
         font-family: 'Droid Sans';
     }
+
+    .card-nav-tabs {
+        margin-left: 15px;
+        margin-top: 60px;
+        font-family: 'Droid Sans';
+    }
+
 </style>
 
 <div layout="row">
+    <div class="card card-nav-tabs">
+        <div class="card-header" data-background-color="purple">
+            <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                    <h4 class="title">Samsung</h4>
+                    <ul class="nav nav-tabs" data-tabs="tabs">
+                        <li class="pull-right">
+                            <a href="#others" data-toggle="tab">
+                                <md-icon md-svg-src="assets/icon/ic_code_white_48px.svg"></md-icon>
+                                Others
+                            </a>
+                        </li>
+                        <li class="pull-right">
+                            <a href="#featurerequest" data-toggle="tab">
+                                <md-icon md-svg-src="assets/icon/ic_add_box_white_48px.svg"></md-icon>
+                                Feature Req
+                            </a>
+                        </li>
+                        <li class="pull-right">
+                            <a href="#bug" data-toggle="tab">
+                                <md-icon md-svg-src="assets/icon/ic_bug_report_white_48px.svg"></md-icon>
+                                Bug
+                            </a>
+                        </li>
+                        <li class="active pull-right">
+                            <a href="#all" data-toggle="tab">
+                                <md-icon md-svg-src="assets/icon/ic_select_all_white_48px.svg"></md-icon>
+                                All
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-content">
+            <div class="tab-content">
+                <div class="tab-pane fade" id="bug">
+                    Bug
+                </div>
+                <div class="tab-pane fade" id="featurerequest">
+                    Feature Request
+                </div>
+                <div class="tab-pane fade" id="others">
+                    Others
+                </div>
+                <div class="tab-pane fade  in active" id="all">
+                    All
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="card ape">
         <div class="card-header" data-background-color="purple">
             <h4 class="title">Samsung</h4>
-            <!-- <p class="category"><a href="mailto:mincheoulkim@google.com" style="text-decoration: none;" target="_blank">Jiyoung Lee</a></p>  -->
+            <p class="category">Here is a subtitle for this table</p>
         </div>
         <div class="card-content table-responsive table-full-width">
             <table class="table">
@@ -22,18 +82,17 @@
                 </thead>
                 <tbody ng-repeat="topic in topiclistSamsung">
                     <tr style="margin-left: 10px">
-                        <!-- <td><a ng-href="https://b.corp.google.com/issues/{{topic.bugId}}" target="_blank" style="color: black;">{{topic.title}}</a></td>  -->
                         <td>
-                            <md-icon md-svg-src="assets/icon/ic_bug_report_black_48px.svg" aria-label="bug" style="color: red"></md-icon>
-                            <!-- <md-icon md-svg-src="assets/icon/ic_create_new_folder_black_48px.svg" aria-label="bug"></md-icon>
-                            <md-icon md-svg-src="assets/icon/ic_live_help_black_48px.svg" aria-label="bug"></md-icon>  -->
+                            <span ng-if="topic.type == 'BUG'">
+                                <md-icon md-svg-src="assets/icon/ic_bug_report_black_48px.svg" aria-label="bug" style="color: red"></md-icon>
+                            </span>
+                            <span ng-if="topic.type == 'FEATURE-REQUEST'">
+                                <md-icon md-svg-src="assets/icon/ic_add_box_black_48px.svg" aria-label="bug" style="fill: red"></md-icon>
+                            </span>
+                            <span ng-if="topic.type == 'OTHERS'">
+                                <md-icon md-svg-src="assets/icon/ic_code_black_48px.svg" aria-label="bug" style="color: red"></md-icon>
+                            </span>
                         </td>
-
-                        <!--
-                        <md-icon class="menu-icon" aria-label="Menu"  md-svg-icon="assets/img/ic_settings_grey600_48dp.svg">
-                            <md-tooltip md-direction="right" style="font-size: 14px">Admin</md-tooltip>
-                        </md-icon>
-                        -->
 
                         <td ng-click="onClicked(topic)">
                             <div ng-show="!topic.isClicked">{{topic.title}}</div>
@@ -49,7 +108,6 @@
     <div class="card ape">
         <div class="card-header" data-background-color="blue">
             <h4 class="title">LGE</h4>
-            <!-- <p class="category"><a href="mailto:mincheoulkim@google.com" style="text-decoration: none;" target="_blank">Jey Lee</a></p>  -->
         </div>
         <div class="card-content table-responsive table-full-width">
             <table class="table">
@@ -71,7 +129,7 @@
     <div class="card ape">
         <div class="card-header" data-background-color="green">
             <h4 class="title">Motorola</h4>
-            <!-- <p class="category"><a href="mailto:mincheoulkim@google.com" style="text-decoration: none;" target="_blank">Alex Medina</a></p>  -->
+
         </div>
         <div class="card-content table-responsive table-full-width">
             <table class="table">
@@ -89,4 +147,5 @@
             </table>
         </div>
     </div>
+
 </div>
