@@ -1,0 +1,92 @@
+
+<style>
+    .ape {
+        margin-left: 15px;
+        margin-top: 60px;
+        font-family: 'Droid Sans';
+    }
+</style>
+
+<div layout="row">
+    <div class="card ape">
+        <div class="card-header" data-background-color="purple">
+            <h4 class="title">Samsung</h4>
+            <!-- <p class="category"><a href="mailto:mincheoulkim@google.com" style="text-decoration: none;" target="_blank">Jiyoung Lee</a></p>  -->
+        </div>
+        <div class="card-content table-responsive table-full-width">
+            <table class="table">
+                <thead>
+                <th style="font-weight: bold">Type</th>
+                <th style="font-weight: bold">Topic</th>
+                <th style="font-weight: bold">Status</th>
+                </thead>
+                <tbody ng-repeat="topic in topiclistSamsung">
+                    <tr style="margin-left: 10px">
+                        <!-- <td><a ng-href="https://b.corp.google.com/issues/{{topic.bugId}}" target="_blank" style="color: black;">{{topic.title}}</a></td>  -->
+                        <td>
+                            <md-icon md-svg-src="assets/icon/ic_bug_report_black_48px.svg" aria-label="bug" style="color: red"></md-icon>
+                            <!-- <md-icon md-svg-src="assets/icon/ic_create_new_folder_black_48px.svg" aria-label="bug"></md-icon>
+                            <md-icon md-svg-src="assets/icon/ic_live_help_black_48px.svg" aria-label="bug"></md-icon>  -->
+                        </td>
+
+                        <!--
+                        <md-icon class="menu-icon" aria-label="Menu"  md-svg-icon="assets/img/ic_settings_grey600_48dp.svg">
+                            <md-tooltip md-direction="right" style="font-size: 14px">Admin</md-tooltip>
+                        </md-icon>
+                        -->
+
+                        <td ng-click="onClicked(topic)">
+                            <div ng-show="!topic.isClicked">{{topic.title}}</div>
+                            <div ng-show="topic.isClicked"><div style="font-weight: bold">{{topic.title}}</div><br>{{topic.summary}}</div>
+                        </td>
+                        <td class="{{topic.color}}">{{topic.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card ape">
+        <div class="card-header" data-background-color="blue">
+            <h4 class="title">LGE</h4>
+            <!-- <p class="category"><a href="mailto:mincheoulkim@google.com" style="text-decoration: none;" target="_blank">Jey Lee</a></p>  -->
+        </div>
+        <div class="card-content table-responsive table-full-width">
+            <table class="table">
+                <thead >
+                <th style="font-weight: bold">Type</th>
+                <th style="font-weight: bold">Topic</th>
+                <th style="font-weight: bold">Status</th>
+                </thead>
+                <tbody ng-repeat="topic in topicListLge">
+                <tr style="margin-left: 10px">
+                    <td><a ng-href="https://b.corp.google.com/issues/{{topic.bugId}}" target="_blank" style="color: black;">{{topic.title}}</a></td>
+                    <td class="{{topic.color}}">{{topic.status}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card ape">
+        <div class="card-header" data-background-color="green">
+            <h4 class="title">Motorola</h4>
+            <!-- <p class="category"><a href="mailto:mincheoulkim@google.com" style="text-decoration: none;" target="_blank">Alex Medina</a></p>  -->
+        </div>
+        <div class="card-content table-responsive table-full-width">
+            <table class="table">
+                <thead >
+                <th style="font-weight: bold">Type</th>
+                <th style="font-weight: bold">Topic</th>
+                <th style="font-weight: bold">Status</th>
+                </thead>
+                <tbody ng-repeat="topic in topicListMoto">
+                <tr style="margin-left: 10px">
+                    <td><a ng-href="https://b.corp.google.com/issues/{{topic.bugId}}" target="_blank" style="color: black;">{{topic.title}}</a></td>
+                    <td class="{{topic.color}}">{{topic.status}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

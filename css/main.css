@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+body {
+    font-family: Lato;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+/*Adjust Side Navigation Size*/
+md-sidenav,
+md-sidenav.md-locked-open,
+md-sidenav.md-closed.md-locked-open-add-active {
+    min-width: 85px !important;
+    width: auto !important;
+    max-width: none !important;
+    /*http://stackoverflow.com/questions/27620354/how-to-change-width-of-a-sidenav-in-angular-material-design*/
+}
+
+/*Centrally align the card*/
+md-card {
+    width: 1340px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Change Tab background color to White*/
+.tab-backgroundcolor {
+    background-color : red;
+}
+
+/*Menu at List in SideNav*/
+.menu-icon {
+    height: 32px;
+    width: 32px;
+}
+
+/*Give more line space at list in SideNav*/
+md-list-item, md-list-item .md-list-item-inner {
+    min-height: 20px;
+    height: 65px;
+}
