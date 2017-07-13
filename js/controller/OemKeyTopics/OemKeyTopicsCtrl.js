@@ -9,7 +9,7 @@
             $scope.topicListLge = [];
             $scope.topicListMoto = [];
 
-            $scope.pageTitle = 'OEM Key Topics';
+            $scope.pageTitle = 'Voice of Partner Dashboard';
 
             angular.element(document).ready(function () {
                 buganizerF.initIssueTrackerAPI().then(
@@ -73,11 +73,15 @@
                     var issue = response.hotlistEntries[i];
 
                     var topic = new Object;
+                    topic.bugId = issue.issueId;
                     topic.title = issue.issue.issueState.title;
                     topic.priority = issue.issue.issueState.priority;
-                    // topic.type = issue.issue.issueState.type; //"BUG'
+                    topic.type = issue.issue.issueState.type;
+                    topic.isClicked = false;
+                    topic.isSummary = true;
+                    topic.summary = "The Sweet Track is an ancient causeway in the Somerset Levels, England. Built in 3807 or 3806 BC along an earlier structure, the Post Track, it was the oldest unearthed timber trackway in Northern Europe until the 2009 discovery of a 6,000-year-old trackway in Plumstead, London. It extended close to 2,000 metres (6,600 ft) across the now largely drained marsh between what was then an island at Westhay and a ridge of high ground at Shapwick.";
 
-                    var ranInteger = Math.floor(Math.random()*101);
+                    /*var ranInteger = Math.floor(Math.random()*101);
                     var remain =  ranInteger % 3;
                     if(remain === 0 )
                         topic.type = "BUG";
@@ -85,12 +89,8 @@
                         topic.type = "FEATURE-REQUEST";
                     else
                         topic.type = "OTHERS";
-
-                    console.log(topic.type);
-                    topic.bugId = issue.issueId;
-                    topic.isClicked = false;
-
-                    topic.summary = "The Sweet Track is an ancient causeway in the Somerset Levels, England. Built in 3807 or 3806 BC along an earlier structure, the Post Track, it was the oldest unearthed timber trackway in Northern Europe until the 2009 discovery of a 6,000-year-old trackway in Plumstead, London. It extended close to 2,000 metres (6,600 ft) across the now largely drained marsh between what was then an island at Westhay and a ridge of high ground at Shapwick.";
+                     console.log(topic.type);
+                    */
 
                     switch(issue.issue.issueState.status) {
                         case 'NEW':

@@ -12,9 +12,17 @@
         font-family: 'Droid Sans';
     }
 
+    th {
+        font-weight: bold;
+    }
+
+    .cardholder {
+        margin-right: 8px;
+    }
 </style>
 
-<div layout="row">
+<div class="cardholder" layout="column">
+    <!--
     <div class="card card-nav-tabs">
         <div class="card-header" data-background-color="purple">
             <div class="nav-tabs-navigation">
@@ -67,7 +75,124 @@
             </div>
         </div>
     </div>
+-->
+    <div class="card ape">
+        <div class="card-header" data-background-color="purple">
+            <h4 class="title">Samsung</h4>
+            <!-- <p class="category">Here is a subtitle for this table</p>   -->
+        </div>
+        <div class="card-content table-responsive table-full-width">
+            <table class="table">
+                <thead>
+                    <th style="width: 7%">ID</th>
+                    <th style="width: 7%">Status</th>
+                    <th style="width: 5%">Type</th>
+                    <th>Topic</th>
+                </thead>
+                <tbody ng-repeat="topic in topiclistSamsung">
+                    <tr style="margin-left: 10px">
+                        <td>{{topic.bugId}}</td>
+                        <td class="{{topic.color}}">{{topic.status}}</td>
+                        <td>
+                                <span ng-if="topic.type == 'BUG'">
+                                    <md-icon md-svg-src="assets/icon/ic_bug_report_black_48px.svg" aria-label="bug" style="color: red"></md-icon>
+                                </span>
+                            <span ng-if="topic.type == 'FEATURE-REQUEST'">
+                                    <md-icon md-svg-src="assets/icon/ic_add_box_black_48px.svg" aria-label="bug" style="fill: red"></md-icon>
+                                </span>
+                            <span ng-if="topic.type == 'OTHERS'">
+                                    <md-icon md-svg-src="assets/icon/ic_code_black_48px.svg" aria-label="bug" style="color: red"></md-icon>
+                                </span>
+                        </td>
+                        <td ng-click="onClicked(topic)">
+                            <div ng-show="!topic.isClicked">{{topic.title}}</div>
+                            <div ng-show="topic.isClicked"><div style="font-weight: bold">{{topic.title}}</div><br>{{topic.summary}}</div>
 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card ape">
+        <div class="card-header" data-background-color="purple">
+            <h4 class="title">Samsung</h4>
+            <!-- <p class="category">Here is a subtitle for this table</p>   -->
+        </div>
+        <div class="card-content table-responsive table-full-width">
+            <table class="table">
+                <thead>
+                <th style="width: 7%">ID</th>
+                <th style="width: 7%">Status</th>
+                <th style="width: 5%">Type</th>
+                <th>Topic</th>
+                </thead>
+                <tbody ng-repeat="topic in topiclistSamsung">
+                <tr style="margin-left: 10px">
+                    <td>{{topic.bugId}}</td>
+                    <td class="{{topic.color}}">{{topic.status}}</td>
+                    <td>
+                                <span ng-if="topic.type == 'BUG'">
+                                    <md-icon md-svg-src="assets/icon/ic_bug_report_black_48px.svg" aria-label="bug" style="color: red"></md-icon>
+                                </span>
+                        <span ng-if="topic.type == 'FEATURE-REQUEST'">
+                                    <md-icon md-svg-src="assets/icon/ic_add_box_black_48px.svg" aria-label="bug" style="fill: red"></md-icon>
+                                </span>
+                        <span ng-if="topic.type == 'OTHERS'">
+                                    <md-icon md-svg-src="assets/icon/ic_code_black_48px.svg" aria-label="bug" style="color: red"></md-icon>
+                                </span>
+                    </td>
+                    <td ng-click="onClicked(topic)">
+                        <div ng-show="!topic.isClicked">{{topic.title}}</div>
+                        <div ng-show="topic.isClicked"><div style="font-weight: bold">{{topic.title}}</div><br>{{topic.summary}}</div>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<!--
+    <div class="card ape">
+        <div class="card-header" data-background-color="purple">
+            <h4 class="title">Samsung</h4>
+            <p class="category">Here is a subtitle for this table</p>
+        </div>
+        <div class="card-content table-responsive table-full-width">
+            <table class="table">
+                <thead>
+                <th style="font-weight: bold">Type</th>
+                <th style="font-weight: bold">Topic</th>
+                <th style="font-weight: bold">Status</th>
+                </thead>
+                <tbody ng-repeat="topic in topiclistSamsung">
+                <tr style="margin-left: 10px">
+                    <td>
+                            <span ng-if="topic.type == 'BUG'">
+                                <md-icon md-svg-src="assets/icon/ic_bug_report_black_48px.svg" aria-label="bug" style="color: red"></md-icon>
+                            </span>
+                        <span ng-if="topic.type == 'FEATURE-REQUEST'">
+                                <md-icon md-svg-src="assets/icon/ic_add_box_black_48px.svg" aria-label="bug" style="fill: red"></md-icon>
+                            </span>
+                        <span ng-if="topic.type == 'OTHERS'">
+                                <md-icon md-svg-src="assets/icon/ic_code_black_48px.svg" aria-label="bug" style="color: red"></md-icon>
+                            </span>
+                    </td>
+
+                    <td ng-click="onClicked(topic)">
+                        <div ng-show="!topic.isClicked">{{topic.title}}</div>
+                        <div ng-show="topic.isClicked"><div style="font-weight: bold">{{topic.title}}</div><br>{{topic.summary}}</div>
+                    </td>
+                    <td class="{{topic.color}}">{{topic.status}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+-->
+
+<!--
     <div class="card ape">
         <div class="card-header" data-background-color="purple">
             <h4 class="title">Samsung</h4>
@@ -104,48 +229,5 @@
             </table>
         </div>
     </div>
-
-    <div class="card ape">
-        <div class="card-header" data-background-color="blue">
-            <h4 class="title">LGE</h4>
-        </div>
-        <div class="card-content table-responsive table-full-width">
-            <table class="table">
-                <thead >
-                <th style="font-weight: bold">Type</th>
-                <th style="font-weight: bold">Topic</th>
-                <th style="font-weight: bold">Status</th>
-                </thead>
-                <tbody ng-repeat="topic in topicListLge">
-                <tr style="margin-left: 10px">
-                    <td><a ng-href="https://b.corp.google.com/issues/{{topic.bugId}}" target="_blank" style="color: black;">{{topic.title}}</a></td>
-                    <td class="{{topic.color}}">{{topic.status}}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="card ape">
-        <div class="card-header" data-background-color="green">
-            <h4 class="title">Motorola</h4>
-
-        </div>
-        <div class="card-content table-responsive table-full-width">
-            <table class="table">
-                <thead >
-                <th style="font-weight: bold">Type</th>
-                <th style="font-weight: bold">Topic</th>
-                <th style="font-weight: bold">Status</th>
-                </thead>
-                <tbody ng-repeat="topic in topicListMoto">
-                <tr style="margin-left: 10px">
-                    <td><a ng-href="https://b.corp.google.com/issues/{{topic.bugId}}" target="_blank" style="color: black;">{{topic.title}}</a></td>
-                    <td class="{{topic.color}}">{{topic.status}}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
+-->
 </div>

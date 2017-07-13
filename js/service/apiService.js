@@ -25,10 +25,6 @@
                 return deferred.promise;
             }
 
-
-
-
-
             function init() {
                 gapi.auth.authorize({client_id: CLIENT_ID, scope: SCOPES, immediate: false},function handleAuthResult(authResult) {
                     if (authResult && !authResult.error) {

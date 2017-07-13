@@ -23,7 +23,7 @@
                         $scope.appTitle = RESOURCE.APP_TITLE + 'Android Feature Adoption Status';
                         break;
                     case 'oemKeyTopics':
-                        $scope.appTitle = RESOURCE.APP_TITLE + 'OEM Key Topics';
+                        $scope.appTitle = RESOURCE.APP_TITLE + 'Voice of Partner Dashboard';
                         break;
                     case 'manAdoption':
                         $scope.appTitle = RESOURCE.APP_TITLE + 'Android Mandatory Feature Adoption Status';
@@ -48,7 +48,7 @@
                         break;
                     case 2:
                         $scope.currentPage = 'oemKeyTopics';
-                        $scope.appTitle = RESOURCE.APP_TITLE + 'OEM Key Topics';
+                        $scope.appTitle = RESOURCE.APP_TITLE + 'Voice of Partner Dashboard';
                         break;
                     case 3:
                         $scope.currentPage = 'manAdoption';
