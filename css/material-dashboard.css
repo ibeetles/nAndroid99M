@@ -357,6 +357,7 @@ h4, .h4 {
   line-height: 1.4em;
 }
 
+
 h5, .h5 {
   font-size: 1.25em;
   line-height: 1.4em;
@@ -394,10 +395,13 @@ h2.title {
 .footer-big p {
   color: #999999;
 }
+/*
 
 .text-warning {
   color: #ff9800;
 }
+
+*/
 
 .text-primary {
   color: #9c27b0;
@@ -407,9 +411,11 @@ h2.title {
   color: #f44336;
 }
 
+/*
 .text-success {
   color: #4caf50;
 }
+*/
 
 .text-info {
   color: #00bcd4;

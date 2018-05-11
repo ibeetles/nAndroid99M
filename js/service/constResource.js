@@ -4,6 +4,7 @@
 
     angular.module('ngAndroidNext99')
         .constant('RESOURCE', {
-            'APP_TITLE'                         : "Next 99 - ",
+            'APP_TITLE'                         : "Android Partner Engineering Team - ",
+
         })
 })(window.angular);

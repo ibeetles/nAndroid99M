@@ -1,30 +1,37 @@
-<div style="height: inherit">
-    <md-card layout-padding>
-        <md-card-content>
-            <h4>Android Feature Adoption Status</h4>
-            <p>Feature adoption status is based on OEM TAM response from their partners.<i>If nothing shows, please open new tab and navigate to <span class='text-danger'>'plx/'</span> to get credential.</i></p>
-        </md-card-content>
-    </md-card>
 
-    <md-card layout-padding style="height: 90%;">
-        <md-card-content style="height: 100%" >
-            <md-tabs md-selected="0" layout-fill>
-                <md-tab label="N & N MR1" md-on-select="switchTab(0)">
-                    <div ng-if="currentPage == 'nFeatureAdoption'">
-                        <div ng-include="'view/FeatureAdoption/N.html'" ng-controller="ngNfeatureCtrl"></div>
-                        <!-- <div ng-include="'view/FeatureAdoption/N.html'" ng-controller="ngNfeatureDremelCtrl"></div>    -->
-                        <hr>
-                    </div>
-                </md-tab>
+<div class="cardholder" layout="row" >
+  <div class="card ape">
+    <div class="card-header" data-background-color="purple">
+      <h4 class="title">Android Feature Adoption Tracker</h4>
+      <p class="category">Partner & Device data comes from 'Flagship and Fast Follower Schedule, and feature adoption status is based on OEM TAM response.</p>
+    </div>
+    <div class="card-content">
+      <div style="height: 1150px">
+        <md-tabs md-selected="0" layout-fill>
+          <md-tab label="Nougat" md-on-select="switchTab(0)">
+            <div ng-if="currentPage == 'nFeatureAdoption'">
+              <div ng-include="'view/FeatureAdoption/N.html'" ng-controller="ngNfeatureCtrl"></div>
+              <hr>
+            </div>
+          </md-tab>
 
-                <md-tab label="O" md-on-select="switchTab(1)" layout-fill>
-                    <div ng-if="currentPage == 'oFeatureAdoption'">
-                        <div ng-include="'view/FeatureAdoption/O.html'" ng-controller="ngOfeatureCtrl"></div>
-                        <!--  <div ng-include="'view/FeatureAdoption/O.html'" ng-controller="ngOfeatureDremelCtrl"></div>   -->
-                        <hr>
-                    </div>
-                </md-tab>
-            </md-tabs>
-        </md-card-content>
-    </md-card>
+          <md-tab label="Oreo" md-on-select="switchTab(1)" layout-fill>
+            <div ng-if="currentPage == 'oFeatureAdoption'">
+              <div ng-include="'view/FeatureAdoption/O.html'" ng-controller="ngOfeatureCtrl"></div>
+              <hr>
+            </div>
+          </md-tab>
+
+          <md-tab label="Pie" md-on-select="switchTab(2)" layout-fill>
+            <div ng-if="currentPage == 'pFeatureAdoption'">
+              <div ng-include="'view/FeatureAdoption/P.html'" ng-controller="ngPfeatureCtrl"></div>
+              <hr>
+            </div>
+          </md-tab>
+        </md-tabs>
+    </div>
+    </div>
+  </div>
+
 </div>
+

@@ -12,6 +12,7 @@ body {
     background-color: #fff;
 }
 
+
 /*Adjust Side Navigation Size*/
 md-sidenav,
 md-sidenav.md-locked-open,
@@ -24,7 +25,7 @@ md-sidenav.md-closed.md-locked-open-add-active {
 
 /*Centrally align the card*/
 md-card {
-    width: 1340px;
+    width: 1360px;
 
     margin-left: auto;
     margin-right: auto;
@@ -45,4 +46,15 @@ md-card {
 md-list-item, md-list-item .md-list-item-inner {
     min-height: 20px;
     height: 65px;
+}
+
+
+.cardholder {
+    margin-top: 10px;
+     margin-left: 200px;
+     width: 1500px;
+ }
+
+.card-content {
+    font-family: Lato;
 }

@@ -1,8 +1,10 @@
 
 (function(angular) {
     'use strict';
+
     angular.module('ngAndroidNext99')
-        .controller('ngNfeatureCtrl', function($scope, buganizerF) {
+        .controller('ngPfeatureCtrl', function($scope, buganizerF) {
+
             $scope.deviceList = [];
             $scope.oemList = [];
             $scope.featureList = [];
@@ -13,22 +15,17 @@
             var _features = [];
 
 
-            $scope.$on('$viewContentLoaded', function() {
-                //call it here
-                var currentdate = new Date();
-                console.log('$viewContentLoaded - ngNfeatureCtrl - ' + currentdate.getMilliseconds());
-            });
-
             angular.element(document).ready(function () {
+
                 var currentdate = new Date();
-                console.log('angular.element.ready - ngNfeatureCtrl - ' + currentdate.getMilliseconds());
+                console.log('angular.element.ready - ngPfeatureCtrl - ' + currentdate.getMilliseconds());
 
                 buganizerF.initIssueTrackerAPI().then(
                     // success function
                     function(authResult) {
-                        console.log("succeeded in init API - initIssueTrackerAPI - NFeatureCtrl.js");
+                        console.log("succeeded in init API - initIssueTrackerAPI - PFeatureCtrl.js");
                         // call function to retrieve bugs by hotlist
-                        buganizerF.getHotlistEntries('AndroidNFeatureAdoption').then(
+                        buganizerF.getHotlistEntries('AndroidPFeatureAdoption').then(
                             //success function
                             function(response) {
                                 _parseData(response);
@@ -36,30 +33,28 @@
                             //error function
                             function (msg) {
                                 console.log(msg);
-                                console.log('failed to retrieve hotlist and its bug list - initIssueTrackerAPI - NFeatureCtrl.js');
+                                console.log('failed to retrieve hotlist and its bug list - initIssueTrackerAPI - PFeatureCtrl.js');
                             }
                         );
                     },
                     //error function
                     function(authResult) {
-                        console.log("failed in init API - initIssueTrackerAPI - NFeatureCtrl.js");
+                        console.log("failed in init API - initIssueTrackerAPI - PFeatureCtrl.js");
                     }
                 );
             });
 
             function _parseData(response) {
-                console.log('parsing data - _parseData - NFeatureCtrl.js');
-
+                console.log('parsing data - _parseData - PFeatureCtrl.js');
                 if(!response) {
-                    console.log('Bad Query executed - _parseData - NFeatureCtrl.js');
+                    console.log('Bad Query executed - _parseData - PFeatureCtrl.js');
                     return;
                 }
 
                 if (!response['hotlistEntries']) {
-                    console.log('No data existing - _parseData - NFeatureCtrl.js');
+                    console.log('No data existing - _parseData - PFeatureCtrl.js');
                     return;
                 }
-
 
                 for(var i = 0; i < response.hotlistEntries.length; i++)  {
                     var issue = response.hotlistEntries[i];
@@ -208,39 +203,53 @@
 
                 for(var cnt = 0; cnt < issue.issue.issueState.customFields.length; cnt++) {
                     switch(issue.issue.issueState.customFields[cnt].customFieldId)  {
-                        //case '83961': // release version
+                        //case '83961': // launch version
                         case '85051': // Samsung
                         case '87023': // Next99 > Feature Adoption
+                        case '87079': // Moto
+                        case '88362': // LG
                             releaseVer = issue.issue.issueState.customFields[cnt].enumValue;
                             break;
                         //case '83970': // project lead
                         case '85108': // Samsung
                         case '86958': // Next99 > Feature Adoption
+                        case '87095': // Moto
+                        case '88376': // LG
                             projectLead = issue.issue.issueState.customFields[cnt].textValue;
                             break;
                         //case '83966': // feature name
                         case '85112': // Samsung
                         case '86964': // Next99 > Feature Adoption
+                        case '87084': // Moto
+                        case '88371': // LG
                             featureName = issue.issue.issueState.customFields[cnt].enumValue;
                             break;
                         //case '83965': // OEM name
                         case '85120': // Samsung
                         case '87022': // Next99 > Feature Adoption
+                        case '87074': // Moto
+                        case '88367': // LG
                             oemName = issue.issue.issueState.customFields[cnt].enumValue;
                             break;
                         //case '83871': // region
                         case '85121': // Samsung
                         case '86979': // Next99 > Feature Adoption
+                        case '87083': // Moto
+                        case '88430': // LG
                             region = issue.issue.issueState.customFields[cnt].enumValue;
                             break;
                         //case '83872': // marketing product name
                         case '85125': // Samsung
                         case '87060': // Next99 > Feature Adoption
+                        case '87078': // Moto
+                        case '88426': // LG
                             marketingProductName = issue.issue.issueState.customFields[cnt].enumValue;
                             break;
                         //case '83929': // supporting status
                         case '85113': // Samsung
                         case '87061': // Next99 > Feature Adoption
+                        case '87096': // Moto
+                        case '88368': // LG
                             supportingStatus = issue.issue.issueState.customFields[cnt].enumValue;
                             isSupportStatusFound = true;
                             break;
