@@ -21,6 +21,7 @@
                         break;
                     case 'featureAdoption':
                         $scope.appTitle = RESOURCE.APP_TITLE + 'Android Ecosystem Review';
+
                         break;
                     case 'oemKeyTopics':
                         $scope.appTitle = RESOURCE.APP_TITLE + 'Voice of Partner Dashboard';

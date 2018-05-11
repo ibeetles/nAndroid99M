@@ -14,6 +14,7 @@
 
             $scope.buganizerdate = '';
 
+
             $scope.init = function () {
                 var yesterday = new Date(Date.now() - 86400000);
                 var dd = yesterday.getDate();

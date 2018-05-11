@@ -7,6 +7,7 @@
 
             var deferred;
 
+
             var sqlAndroidFAdoption = function(version) {
                 // We will indentify Android version by Hotlist (N:AndroidNFeatureAdoption, O:AndroidOFeatureAdoption)
                 var hotlist_ids = '';

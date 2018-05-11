@@ -15,6 +15,7 @@
             // Define the titles of your tabs
             $scope.tabs = ["N", "O", "P"];
 
+
             // Change the tab
             $scope.switchTab = function(index) {
                 switch(index) {

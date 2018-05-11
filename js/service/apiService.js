@@ -88,6 +88,7 @@
             this.getHotlistEntries = function(hotlistName) {
 
                 var hotlistId;
+
                 deferred = $q.defer();
 
                 // if API is not initialized, return false

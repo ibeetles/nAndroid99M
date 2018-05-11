@@ -14,6 +14,7 @@
             var _featureCount = 0;
             var _features = [];
 
+
             angular.element(document).ready(function () {
 
                 var currentdate = new Date();

@@ -12,6 +12,7 @@
             var _featureCount = 0;
             var _features = [];
 
+
             $scope.$on('$viewContentLoaded', function() {
                 //call it here
                 var currentdate = new Date();
