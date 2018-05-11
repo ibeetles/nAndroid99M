@@ -26,9 +26,6 @@
             }
 
 
-
-
-
             function init() {
                 gapi.auth.authorize({client_id: CLIENT_ID, scope: SCOPES, immediate: false},function handleAuthResult(authResult) {
                     if (authResult && !authResult.error) {
@@ -104,6 +101,8 @@
                 }
                 else if(hotlistName === 'AndroidOFeatureAdoption') {
                     hotlistId = CONST.AndroidOFeatureAdoption;
+                } else if(hotlistName === 'AndroidPFeatureAdoption'){
+                    hotlistId = CONST.AndroidPFeatureAdoption;
                 }
                 else {
                     deferred.reject('Wrong Hotlist Name - getHotlistEntries');
@@ -116,7 +115,6 @@
                     ISSUE_TRACKER_API_VERSION,
                     function() {
                         var request = gapi.client.corp_issuetracker.hotlists.entries.list (
-                            //{'hotlistId':'466180'},
                             {'hotlistId':hotlistId},
                             {'pageSize' : '500'}
                         );

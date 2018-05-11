@@ -6,6 +6,7 @@
         .constant('CONST', {
             'AndroidNFeatureAdoption'   : '466180',
             'AndroidOFeatureAdoption'   : '469088',
+            'AndroidPFeatureAdoption'   : '932968',
             'OEMKeyTopicsSamsung'       : '485106',
             'OEMKeyTopicsLGE'           : '485113',
             'OEMKeyTopicsMotorola'      : '484993',

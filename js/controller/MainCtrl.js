@@ -5,7 +5,7 @@
     angular.module('ngAndroidNext99')
         .controller('ngMainCtrl', function($scope, $mdSidenav,RESOURCE) {
 
-            $scope.currentPage = 'oemKeyTopics';
+            $scope.currentPage = 'featureAdoption';
 
 
             $scope.toggleSidenav = function(menuId) {
@@ -20,10 +20,10 @@
                         $scope.appTitle = RESOURCE.APP_TITLE + 'Home';
                         break;
                     case 'featureAdoption':
-                        $scope.appTitle = RESOURCE.APP_TITLE + 'Android Feature Adoption Status';
+                        $scope.appTitle = RESOURCE.APP_TITLE + 'Android Ecosystem Review';
                         break;
                     case 'oemKeyTopics':
-                        $scope.appTitle = RESOURCE.APP_TITLE + 'OEM Key Topics';
+                        $scope.appTitle = RESOURCE.APP_TITLE + 'Voice of Partner Dashboard';
                         break;
                     case 'manAdoption':
                         $scope.appTitle = RESOURCE.APP_TITLE + 'Android Mandatory Feature Adoption Status';
@@ -44,11 +44,11 @@
                         break;
                     case 1:
                         $scope.currentPage = 'featureAdoption';
-                        $scope.appTitle = RESOURCE.APP_TITLE + 'Android Feature Adoption Status';
+                        $scope.appTitle = RESOURCE.APP_TITLE + 'Android Ecosystem Review';
                         break;
                     case 2:
                         $scope.currentPage = 'oemKeyTopics';
-                        $scope.appTitle = RESOURCE.APP_TITLE + 'OEM Key Topics';
+                        $scope.appTitle = RESOURCE.APP_TITLE + 'Voice of Partner Dashboard';
                         break;
                     case 3:
                         $scope.currentPage = 'manAdoption';
