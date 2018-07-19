@@ -25,7 +25,8 @@ md-sidenav.md-closed.md-locked-open-add-active {
 
 /*Centrally align the card*/
 md-card {
-    width: 1360px;
+    /*width: 1360px;*/
+    width: 1800px;
 
     margin-left: auto;
     margin-right: auto;
@@ -52,7 +53,8 @@ md-list-item, md-list-item .md-list-item-inner {
 .cardholder {
     margin-top: 10px;
      margin-left: 200px;
-     width: 1500px;
+     /* width: 1500px; */
+     width: 1900px;
  }
 
 .card-content {

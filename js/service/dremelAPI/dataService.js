@@ -7,7 +7,6 @@
 
             var deferred;
 
-
             var sqlAndroidFAdoption = function(version) {
                 // We will indentify Android version by Hotlist (N:AndroidNFeatureAdoption, O:AndroidOFeatureAdoption)
                 var hotlist_ids = '';
@@ -60,14 +59,20 @@
                     var dataSet = new aplos.data.DataSet()
                         .dataLoader(dataLoader);
                 }catch(err) {
-                    console.log('catch statement');
                     deferred.reject(err);
                     return deferred.promise;
                 }
 
-                dataSet.fetch(new aplos.data.Projection()).then(function(d) {
+                try {
+                  dataSet.fetch(new aplos.data.Projection()).then(function (d) {
                     deferred.resolve(d[0].data);
-                }, onDataError);
+                  }, function (reason) {
+                    console.log('ERR_DATA_FETCH_FAILED - ' + reason.error.message);
+                  });
+                } catch(error) {
+                  deferred.reject(err);
+                  return deferred.promise;
+                }
 
                 return deferred.promise;
             };

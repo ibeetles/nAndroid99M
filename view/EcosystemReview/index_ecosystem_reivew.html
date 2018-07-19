@@ -1,0 +1,35 @@
+
+<div class="cardholder" layout="row" >
+    <div class="card ape">
+        <div class="card-header" data-background-color="green">
+            <h4 class="title">Android Ecosystem Review</h4>
+            <p class="category">APE has been condcuting Android Ecosystem Review since Nougat</p>
+        </div>
+        <div class="card-content">
+            <div style="height: 1150px">
+                <md-tabs md-selected="0" layout-fill>
+                    <md-tab label="Pie" md-on-select="switchTab(0)">
+                        <div ng-if="currentPage == 'pEcosystemReview'">
+                            <div ng-include="'view/EcosystemReview/P.html'" ng-controller="ngPEcosystemReviewDremelCtrl"></div>
+                            <hr>
+                        </div>
+                    </md-tab>
+
+                    <md-tab label="Quark" md-on-select="switchTab(1)" layout-fill>
+                        <div ng-if="currentPage == 'qEcosystemReview'">
+                            <div ng-include="'view/EcosystemReview/P.html'" ng-controller="ngPEcosystemReviewDremelCtrl"></div>
+                            <hr>
+                        </div>
+                    </md-tab>
+
+                    <md-tab label="Raisins" md-on-select="switchTab(2)" layout-fill>
+                        <div ng-if="currentPage == 'rEcosystemReview'">
+                            <div ng-include="'view/EcosystemReview/P.html'" ng-controller="ngPEcosystemReviewDremelCtrl"></div>
+                            <hr>
+                        </div>
+                    </md-tab>
+                </md-tabs>
+            </div>
+        </div>
+    </div>
+</div>

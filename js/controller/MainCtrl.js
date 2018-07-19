@@ -17,17 +17,17 @@
 
                 switch($scope.currentPage) {
                     case 'home':
-                        $scope.appTitle = RESOURCE.APP_TITLE + 'Home';
+                        $scope.appTitle = RESOURCE.APP_TITLE + 'Home (Next99)';
                         break;
                     case 'featureAdoption':
-                        $scope.appTitle = RESOURCE.APP_TITLE + 'Android Ecosystem Review';
+                        $scope.appTitle = RESOURCE.APP_TITLE + 'Android Feature Adoption Status';
 
                         break;
-                    case 'oemKeyTopics':
-                        $scope.appTitle = RESOURCE.APP_TITLE + 'Voice of Partner Dashboard';
+                    case 'androidOne':
+                        $scope.appTitle = RESOURCE.APP_TITLE + 'Android One Feature Adoption Status';
                         break;
-                    case 'manAdoption':
-                        $scope.appTitle = RESOURCE.APP_TITLE + 'Android Mandatory Feature Adoption Status';
+                    case 'ecoSystemReview':
+                        $scope.appTitle = RESOURCE.APP_TITLE + 'Android Ecosystem Review';
                         break;
                     case 'admin':
                         $scope.appTitle = RESOURCE.APP_TITLE + 'Admin';
@@ -45,15 +45,15 @@
                         break;
                     case 1:
                         $scope.currentPage = 'featureAdoption';
-                        $scope.appTitle = RESOURCE.APP_TITLE + 'Android Ecosystem Review';
+                        $scope.appTitle = RESOURCE.APP_TITLE + 'Android Feature Adoption Status';
                         break;
                     case 2:
-                        $scope.currentPage = 'oemKeyTopics';
-                        $scope.appTitle = RESOURCE.APP_TITLE + 'Voice of Partner Dashboard';
+                        $scope.currentPage = 'androidOne';
+                        $scope.appTitle = RESOURCE.APP_TITLE + 'Android One Feature Adoption Status';
                         break;
                     case 3:
-                        $scope.currentPage = 'manAdoption';
-                        $scope.appTitle = RESOURCE.APP_TITLE + 'Android Mandatory Feature Adoption Status';
+                        $scope.currentPage = 'ecoSystemReview';
+                        $scope.appTitle = RESOURCE.APP_TITLE + 'Android Ecosystem Review';
                         break;
                     case 4:
                         $scope.currentPage = 'admin';

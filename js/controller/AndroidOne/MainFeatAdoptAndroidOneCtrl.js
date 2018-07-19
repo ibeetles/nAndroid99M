@@ -3,7 +3,7 @@
     'use strict';
 
     angular.module('ngAndroidNext99')
-        .controller('ngMainManFeatAdoptCtrl', function($scope) {
+        .controller('ngMainFeatAdoptAndroidOneCtrl', function($scope) {
 
             $scope.pageTitle = 'Mandatory Feature Adoption Progress Page is loaded';
 

@@ -1,0 +1,35 @@
+
+<div class="cardholder" layout="row" >
+    <div class="card ape">
+        <div class="card-header" data-background-color="orange">
+            <h4 class="title" >Android One - Feature Adoption Tracker</h4>
+            <p class="category">Partner & Device data comes from 'Flagship and Fast Follower Schedule, and feature adoption status is based on OEM TAM response.</p>
+        </div>
+        <div class="card-content">
+            <div style="height: 1150px">
+                <md-tabs md-selected="0" layout-fill>
+                    <md-tab label="Pie" md-on-select="switchTab(0)">
+                        <div ng-if="currentPage == 'pA1FeatureAdoption'">
+                            <div ng-include="'view/FeatureAdoption/N.html'" ng-controller="ngNfeatureCtrl"></div>
+                            <hr>
+                        </div>
+                    </md-tab>
+
+                    <md-tab label="Quark" md-on-select="switchTab(1)" layout-fill>
+                        <div ng-if="currentPage == 'qA1FeatureAdoption'">
+                            <div ng-include="'view/FeatureAdoption/O.html'" ng-controller="ngOfeatureCtrl"></div>
+                            <hr>
+                        </div>
+                    </md-tab>
+
+                    <md-tab label="Raisins" md-on-select="switchTab(2)" layout-fill>
+                        <div ng-if="currentPage == 'rA1FeatureAdoption'">
+                            <div ng-include="'view/FeatureAdoption/P.html'" ng-controller="ngPfeatureCtrl"></div>
+                            <hr>
+                        </div>
+                    </md-tab>
+                </md-tabs>
+            </div>
+        </div>
+    </div>
+</div>

@@ -13,7 +13,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Next 99</title> <!-- Android Feature Partner Adoption Status Dashboard - Next99-->
+        <title>Android Feature Adoption Analysis</title> <!-- Android Feature Partner Adoption Status Dashboard - Next99-->
 
         <link rel="icon" type="image/x-icon" href="favicon.ico">
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
@@ -50,13 +50,13 @@
         </md-toolbar>
 
         <div layout="row" flex>
-
+<!--
             <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" layout-align="begin center">
                 <md-list>
+
                     <md-list-item md-ink-ripple>
                         <md-item-content >
-                            <!-- <md-button class="md-icon-button" ng-click="pageNavigate(0);"> -->
-                            <md-button class="md-icon-button" ng-click="null">
+                            <md-button class="md-icon-button" ng-click="pageNavigate(0);">
                                 <md-icon class="menu-icon" aria-label="Menu"  md-svg-icon="assets/img/ic_home_grey600_48dp.svg">
                                     <md-tooltip md-direction="right" style="font-size: 14px">Home</md-tooltip>
                                 </md-icon>
@@ -64,42 +64,44 @@
                         </md-item-content>
                     </md-list-item>
 
+
                     <md-list-item md-ink-ripple>
                         <md-item-content >
                             <md-button class="md-icon-button" ng-click="pageNavigate(1);">
                                 <md-icon class="menu-icon" aria-label="Menu"  md-svg-icon="assets/img/ic_assignment_turned_in_grey600_48dp.svg">
-                                    <md-tooltip md-direction="right" style="font-size: 14px">Feature Adoption Status</md-tooltip>
+                                    <md-tooltip md-direction="right" style="font-size: 14px">Android Feature Adoption Tracker</md-tooltip>
                                 </md-icon>
                             </md-button>
                         </md-item-content>
                     </md-list-item>
+
 
                     <md-list-item md-ink-ripple>
                         <md-item-content >
                             <md-button class="md-icon-button" ng-click="pageNavigate(2);">
                                 <md-icon class="menu-icon" aria-label="Menu"  md-svg-icon="assets/img/ic_assessment_grey600_48dp.svg">
 
-                                    <md-tooltip md-direction="right" style="font-size: 14px">OEM Key Topics</md-tooltip>
+                                    <md-tooltip md-direction="right" style="font-size: 14px">Android One Feature Adoption</md-tooltip>
                                 </md-icon>
                             </md-button>
                         </md-item-content>
                     </md-list-item>
 
-
                     <md-list-item md-ink-ripple>
                         <md-item-content >
-                            <!-- <md-button class="md-icon-button" ng-click="pageNavigate(3);">  -->
-                            <md-button class="md-icon-button" ng-click="null">
+                            <md-button class="md-icon-button" ng-click="pageNavigate(3);">
                                 <md-icon class="menu-icon" aria-label="Menu"  md-svg-icon="assets/img/ic_question_answer_grey600_48dp.svg">
-                                    <md-tooltip md-direction="right" style="font-size: 14px">Mandantory Feature Progress</md-tooltip>
+                                    <md-tooltip md-direction="right" style="font-size: 14px">Android Ecosystem Review</md-tooltip>
                                 </md-icon>
                             </md-button>
                         </md-item-content>
                     </md-list-item>
 
+
+
                     <md-list-item md-ink-ripple>
                         <md-item-content >
-                            <!-- <md-button class="md-icon-button" ng-click="pageNavigate(4);">  -->
+                            <!-- <md-button class="md-icon-button" ng-click="pageNavigate(4);">  -->  <!--
                             <md-button class="md-icon-button" ng-click="null">
                                 <md-icon class="menu-icon" aria-label="Menu"  md-svg-icon="assets/img/ic_settings_grey600_48dp.svg">
                                     <md-tooltip md-direction="right" style="font-size: 14px">Admin</md-tooltip>
@@ -107,9 +109,10 @@
                             </md-button>
                         </md-item-content>
                     </md-list-item>
+
                 </md-list>
             </md-sidenav>
-
+-->
             <div layout="column" flex id="content" >
                 <md-content layout="column" flex >
                     <div ng-if="currentPage == 'home'" style="height: 99%;">
@@ -120,12 +123,12 @@
                         <div ng-include="'view/FeatureAdoption/index_feat_adopt.html'" ng-controller="ngMainFeatAdoptCtrl" layout-fill></div>
                     </div>
 
-                    <div ng-if="currentPage == 'oemKeyTopics'" style="height: 99%;">
-                        <div ng-include="'view/OemKeyTopics/oem_key_topics.html'" ng-controller="ngOemKeyTopicsCtrl" layout-fill></div>
+                    <div ng-if="currentPage == 'androidOne'" style="height: 99%;">
+                        <div ng-include="'view/AndroidOne/index_feat_adopt_android_one.html'" ng-controller="ngMainFeatAdoptAndroidOneCtrl" layout-fill></div>
                     </div>
 
-                    <div ng-if="currentPage == 'manAdoption'" style="height: 99%;">
-                        <div ng-include="'view/ManFeatureAdoption/index_mandatory_feat_adopt.html'" ng-controller="ngMainManFeatAdoptCtrl" layout-fill></div>
+                    <div ng-if="currentPage == 'ecoSystemReview'" style="height: 99%;">
+                        <div ng-include="'view/EcosystemReview/index_ecosystem_reivew.html'" ng-controller="ngEcosystemReviewCtrl" layout-fill></div>
                     </div>
 
                     <div ng-if="currentPage == 'admin'" style="height: 99%;">
@@ -147,6 +150,10 @@
 
         <script src="bower_components/angular-smart-table/dist/smart-table.js"></script>
 
+        <!--  Google Platform library to integrate Google Sign-in -->
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src='https://login.corp.google.com/javascript_api.js'></script>
+
         <!--Google API -->
         <script src="https://apis.google.com/js/client.js"></script>
 
@@ -155,18 +162,24 @@
         <script src="https://data.corp.google.com/aplos/versions/aplos-v1_3.js"></script>
         <script src='https://login.corp.google.com/javascript_api.js'></script>
 
+        <!--Google Chart API -->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
         <!-- Application Service  -->
         <script type="text/javascript" src="js/app.js"></script>
-        <script type="text/javascript" src="js/service/apiService.js"></script>
-        <script type="text/javascript" src="js/service/constVariables.js"></script>
-        <script type="text/javascript" src="js/service/constResource.js"></script>
-        <script type="text/javascript" src="js/service/dataService.js"></script>
+        <script type="text/javascript" src="js/service/buganizerAPI/apiService.js"></script>
+        <script type="text/javascript" src="js/service/sharable/constVariables.js"></script>
+        <script type="text/javascript" src="js/service/sharable/constResource.js"></script>
+        <script type="text/javascript" src="js/service/dremelAPI/dataService.js"></script>
+        <script type="text/javascript" src="js/service/sheetAPI/sheetService.js"></script>
 
         <!--Application Main Controller -->
         <script type="text/javascript" src="js/controller/MainCtrl.js"></script>
         <script type="text/javascript" src="js/controller/Home/HomeCtrl.js"></script>
-        <script type="text/javascript" src="js/controller/OemKeyTopics/OemKeyTopicsCtrl.js"></script>
-        <script type="text/javascript" src="js/controller/OemKeyTopics/OemKeyTopicsDremelCtrl.js"></script>
+        <script type="text/javascript" src="js/controller/EcosystemReview/EcosystemReviewCtrl.js"></script>
+        <script type="text/javascript" src="js/controller/EcosystemReview/dremel/PEcosystemReviewDremelCtrl.js"></script>
+        <script type="text/javascript" src="js/controller/AndroidOne/MainFeatAdoptAndroidOneCtrl.js"></script>
+        <script type="text/javascript" src="js/controller/Admin/MainAdminCtrl.js"></script>
 
         <script type="text/javascript" src="js/controller/FeatureAdoption/MainFeatAdoptCtrl.js"></script>
         <script type="text/javascript" src="js/controller/FeatureAdoption/api/NFeatureCtrl.js"></script>
@@ -175,10 +188,8 @@
         <script type="text/javascript" src="js/controller/FeatureAdoption/dremel/NFeatureDremelCtrl.js"></script>
         <script type="text/javascript" src="js/controller/FeatureAdoption/dremel/OFeatureDremelCtrl.js"></script>
         <script type="text/javascript" src="js/controller/FeatureAdoption/dremel/PFeatureDremelCtrl.js"></script>
-
-
-        <script type="text/javascript" src="js/controller/ManFeatureAdoption/MainManFeatAdoptCtrl.js"></script>
-        <script type="text/javascript" src="js/controller/Admin/MainAdminCtrl.js"></script>
-
+        <script type="text/javascript" src="js/controller/FeatureAdoption/trix/NFeatureTrixCtrl.js"></script>
+        <script type="text/javascript" src="js/controller/FeatureAdoption/trix/OFeatureTrixCtrl.js"></script>
+        <script type="text/javascript" src="js/controller/FeatureAdoption/trix/PFeatureTrixCtrl.js"></script>
     </body>
 </html>
